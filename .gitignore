@@ -1,0 +1,24 @@
+# Data is not part of this repository
+data/
+*.csv
+*.xlsx
+*.parquet
+*.zip
+*.pyc
+
+# Outputs and saved models
+outputs/
+models/
+*.joblib
+*.pkl
+
+# Environment
+.venv/
+venv/
+.env
+__pycache__/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
