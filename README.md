@@ -1,6 +1,6 @@
 # Transaction Fraud Detection
 
-A fraud model for an online store that sells digital goods (gift cards, game keys, subscriptions). The task is to estimate, at the moment of purchase, how likely it is that the payment method is stolen, and to turn that estimate into an accept / reject decision that the business can manage.
+A fraud model for an online store that sells digital goods (gift cards, game keys, subscriptions). The goal is to estimate, at the moment of purchase, how likely it is that the payment method is stolen, and to turn that estimate into an accept / reject decision that the business can manage.
 
 The whole project is in one notebook: [`fraud_detection.ipynb`](fraud_detection.ipynb).
 
@@ -12,7 +12,7 @@ So the model is judged on two things at once: how many chargebacks it prevents a
 
 ## Data
 
-An event log with 369,853 transactions and 3,220 chargeback notifications, January to June 2021, extracted on 16 August 2021. The data is not included in this repository.
+An event log with 369,853 transactions and 3,220 chargeback notifications, January to June 2021, extracted on 16 August 2021. The data is confidential and is not included in this repository.
 
 A few things in the data shaped the whole approach:
 
@@ -54,16 +54,9 @@ The model sits on top of the existing rules and only scores transactions that th
 - `checkout_seconds` depends on an assumption about when `eventTimestamp` is written. The notebook measures what happens without it (section 5.7).
 - 93% of the fraud in the test period comes from new customers, where there is no history. User behavior and device features are the obvious next step (section 4.8).
 
-## Running it
+## Reproducibility
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab
-```
-
-The notebook expects the event log at `data/raw/data_science_events.parquet`. Python 3.12 was used.
+The data is confidential and is not part of this repository, so the notebook cannot be re-run from here. All outputs are saved in the notebook, so the full analysis, tables and charts can be read directly on GitHub. `requirements.txt` lists the libraries that were used (Python 3.12).
 
 ## Notebook outline
 
